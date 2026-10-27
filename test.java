@@ -14,13 +14,13 @@ public class test {
 
         int temp = 0;
 
-        if (number1 > number2) {
+        if (number1 >= number2) {
             temp = number1;
         } else {
             temp = number2;
         }
 
-        if (temp < number3) {
+        if (temp <= number3) {
             temp = number3;
         }
 
