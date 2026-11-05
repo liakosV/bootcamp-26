@@ -39,7 +39,7 @@ public class test {
         // String name = "johhny";
         // hi("john");
 
-        int[] values = new int[] {2, 4, 5, 6, 7, 3};
+        int[] values = new int[] {2, 4, 5, 6, 7, 10};
 
         System.out.println("Regular order:");
         for(int v = 0; v < values.length; v++) {
@@ -56,5 +56,43 @@ public class test {
 
         
     }
+
+    public static boolean find(int[] array, int key) {
+        int start = 0;
+        int stop = array.length - 1;
+        int midpoint = (start + stop) / 2;
+
+        if (start == key) {
+            return true;
+        }
+        
+        if (stop == key) {
+            return true;
+        }
+        
+        if (array[start] > key) {
+            return false;
+        }
+
+        if (array[stop] < key) {
+            return false;
+        }
+
+        while (array[midpoint] != key) {
+            if (array[midpoint] > key ) {
+                stop = midpoint;
+            } else {
+                start = midpoint;
+            }
+
+            midpoint = (start + stop) / 2;
+
+            if (midpoint == start || midpoint == stop) {
+                return false;
+            }
+        }
+
+        return true;
+    } 
 
 }
